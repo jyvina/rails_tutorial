@@ -14,6 +14,7 @@ gem 'devise' # 追記
 gem 'devise-bootstrap-views' # 追記
 gem 'devise-i18n' # 追記
 gem 'devise-i18n-views' # 追記
+gem 'jquery-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
