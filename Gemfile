@@ -15,6 +15,9 @@ gem 'devise-bootstrap-views' # 追記
 gem 'devise-i18n' # 追記
 gem 'devise-i18n-views' # 追記
 gem 'jquery-rails'
+gem 'faker', '1.1.2'
+gem 'will_paginate', '3.1.6'
+gem 'will_paginate-bootstrap', '1.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
