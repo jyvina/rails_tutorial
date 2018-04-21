@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, :except=>[:show]
-  before_action :admin_user, only: :destroy
+  before_action :admin_user, only: [:destroy, :following, :followers]
   
   
   def index
@@ -16,6 +16,20 @@ class UsersController < ApplicationController
      User.find(params[:id]).destroy
      flash[:success] = "User destroyed."
      redirect_to users_url
+  end
+  
+  def followeing
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
   
   private
